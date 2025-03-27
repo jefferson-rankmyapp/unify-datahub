@@ -34,10 +34,10 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className }) 
           
           <TestimonialCard 
             quote="Antes do Unify, olhávamos 100% pelo espelho retrovisor – e agora olhamos pela janela da frente para ver o que está por vir."
-            author="Fernanda Rocha"
+            author="Ana Costa"
             role="Analista de Dados"
             company="E-commerce Express"
-            image="https://randomuser.me/api/portraits/women/68.jpg"
+            image="https://randomuser.me/api/portraits/women/28.jpg"
             bgColor="bg-white/10"
             textColor="text-white"
           />

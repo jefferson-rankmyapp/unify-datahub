@@ -13,7 +13,7 @@ interface DestinationsProps {
   }[];
   buttonText: string;
   buttonLink: string;
-  id?: string; // Add the id prop
+  id?: string;
 }
 
 const Destinations: React.FC<DestinationsProps> = ({

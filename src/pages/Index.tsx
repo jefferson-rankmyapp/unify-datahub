@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Hero from '@/components/Hero';
 import Button from '@/components/Button';
@@ -11,16 +10,19 @@ import TeamTabs from '@/components/TeamTabs';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 const Index = () => {
-  // State for auto-scrolling client logos
+  // State for auto-scrolling client logos with smoother transition
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
 
-    // Set up the infinite scroll animation for client logos
+    // Set up the infinite scroll animation for client logos with smoother transition
     const interval = setInterval(() => {
-      setScrollPosition(prev => (prev + 1) % 100);
+      setScrollPosition(prev => {
+        // Make the transition more smooth by using smaller increment
+        return (prev + 0.5) % 100;
+      });
     }, 50);
 
     return () => clearInterval(interval);
@@ -28,61 +30,25 @@ const Index = () => {
 
   return (
     <main>
-      {/* Hero Section */}
+      {/* Hero Section with updated image */}
       <Hero
         title="Transforme dados em decisões de marketing impactantes"
         subtitle="Diga adeus às suposições. Prove a eficácia do seu marketing e conduza campanhas de alto desempenho com a inteligência de dados precisa do Unify DataHub."
         primaryCta={{ text: "Comece de graça", href: "#conectores" }}
         secondaryCta={{ text: "Obtenha uma demonstração", href: "#testimonials" }}
-        image="/lovable-uploads/0bfe6c90-659d-4ec7-9668-5db2fe33ed6f.png"
-        imageAlt="Transformação de dados em marketing"
+        image="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+        imageAlt="Profissional de marketing satisfeito com resultados do Unify DataHub"
       />
 
-      {/* Dashboard Preview Section */}
+      {/* Dashboard Preview Section with animation and without side icons */}
       <section className="bg-funnel-red relative py-24">
         <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-2">
-              <nav className="flex flex-row lg:flex-col gap-4">
-                <a href="#" className="p-3 rounded-full bg-funnel-red/30 text-white hover:bg-funnel-red/50 transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-                <a href="#" className="p-3 rounded-full bg-funnel-red/10 text-white hover:bg-funnel-red/30 transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-                <a href="#" className="p-3 rounded-full bg-funnel-red/10 text-white hover:bg-funnel-red/30 transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 16V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 8H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-                <a href="#" className="p-3 rounded-full bg-funnel-red/10 text-white hover:bg-funnel-red/30 transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 21V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V21L8.5 18.5L12 21L15.5 18.5L19 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-                <a href="#" className="p-3 rounded-full bg-funnel-red/10 text-white hover:bg-funnel-red/30 transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 12H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M5 12V19C5 19.5304 5.21071 20.0391 5.58579 20.4142C5.96086 20.7893 6.46957 21 7 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 12V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M9 3H15L16.5 7.5L12 9.5L7.5 7.5L9 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </nav>
-            </div>
-            <div className="lg:col-span-10 overflow-hidden rounded-lg shadow-2xl">
-              <img 
-                src="https://cdn.dribbble.com/users/2469034/screenshots/6714468/comp_1.gif" 
-                alt="Dashboard do Unify DataHub mostrando análises de marketing" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
+          <div className="overflow-hidden rounded-lg shadow-2xl animate-pulse hover:animate-none transition-all duration-500">
+            <img 
+              src="https://cdn.dribbble.com/users/1626229/screenshots/15479233/media/5cc34f5f2c6f2e9483725b500d3f35c6.gif" 
+              alt="Dashboard do Unify DataHub mostrando análises de marketing" 
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>
@@ -90,7 +56,7 @@ const Index = () => {
       {/* Interactive Features Section */}
       <InteractiveFeatures />
 
-      {/* Client Logos Section with infinite scroll */}
+      {/* Client Logos Section with smoother infinite scroll */}
       <section className="bg-funnel-green py-16 overflow-hidden">
         <div className="container-padding max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -101,7 +67,7 @@ const Index = () => {
           
           <div className="relative h-[400px]" style={{ overflow: 'hidden' }}>
             <div 
-              className="absolute w-full transition-transform duration-500 ease-linear"
+              className="absolute w-full transition-transform duration-1000 ease-linear"
               style={{ transform: `translateY(-${scrollPosition}%)` }}
             >
               <img 
@@ -223,7 +189,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Performance Section */}
+      {/* Performance Section - Updated rating display */}
       <section className="bg-black text-white py-24">
         <div className="container-padding max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -233,27 +199,20 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex justify-center space-x-8 mb-16">
-            <div className="flex items-center">
-              <div className="text-amber-400">★★★★½</div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/G2_Crowd_logo.svg/1280px-G2_Crowd_logo.svg.png" alt="G2 rating" className="h-6 ml-2" />
-            </div>
-            <div className="flex items-center">
-              <div className="text-amber-400">★★★★½</div>
-              <img src="https://www.capterra.com/assets/logo-3ab34c16a6bdc16c29fd0aae7df8106e3d788d7d1a79564420e8bfbef90bb3c5.svg" alt="Capterra rating" className="h-6 ml-2" />
-            </div>
+          <div className="flex justify-center mb-16">
+            <div className="text-amber-400 text-3xl">★★★★★</div>
           </div>
         </div>
       </section>
       
-      {/* Performance Metrics Section */}
+      {/* Performance Metrics Section with updated image */}
       <section className="bg-gray-100 py-24">
         <div className="container-padding max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="absolute -left-10 top-1/2 transform -translate-y-1/2 w-32 h-32 bg-funnel-red rounded-full opacity-70"></div>
               <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1715&q=80" 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
                 alt="Performance chart showing growth" 
                 className="relative z-10 rounded-lg shadow-xl"
               />
@@ -286,7 +245,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Booking Demo Section */}
+      {/* Booking Demo Section with updated contact info */}
       <section className="bg-gray-100 py-16 border-t border-gray-200">
         <div className="container-padding max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -345,6 +304,10 @@ const Index = () => {
                   <div>Fale sobre como desbloquear mais valor dos seus dados</div>
                 </li>
               </ul>
+              
+              <p className="text-gray-600 mt-4">
+                Email: contato@rankmyapp.com.br
+              </p>
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-sm">

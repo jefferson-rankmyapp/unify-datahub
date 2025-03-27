@@ -13,7 +13,7 @@ interface ConnectorsProps {
   }[];
   buttonText: string;
   buttonLink: string;
-  id?: string; // Add the id prop
+  id?: string;
 }
 
 const Connectors: React.FC<ConnectorsProps> = ({
@@ -42,7 +42,7 @@ const Connectors: React.FC<ConnectorsProps> = ({
           {platforms.map((platform, index) => (
             <div 
               key={index}
-              className="bg-white/10 rounded-lg p-4 flex flex-col items-center justify-center aspect-square hover:bg-white/20 transition-colors cursor-pointer"
+              className="bg-white rounded-lg p-4 flex flex-col items-center justify-center aspect-square hover:bg-white/90 transition-colors cursor-pointer shadow-md"
             >
               {platform.icon ? (
                 <img 
@@ -51,19 +51,19 @@ const Connectors: React.FC<ConnectorsProps> = ({
                   className="w-12 h-12 object-contain mb-3"
                 />
               ) : (
-                <div className="w-12 h-12 flex items-center justify-center mb-3">
+                <div className="w-12 h-12 flex items-center justify-center mb-3 text-funnel-green">
                   <Plus className="w-8 h-8" />
                 </div>
               )}
-              <span className="text-sm text-center font-medium">{platform.name}</span>
+              <span className="text-sm text-center font-medium text-gray-800">{platform.name}</span>
             </div>
           ))}
           
-          <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center justify-center aspect-square hover:bg-white/10 transition-colors">
-            <div className="w-12 h-12 flex items-center justify-center mb-3">
+          <div className="bg-white/80 rounded-lg p-4 flex flex-col items-center justify-center aspect-square hover:bg-white/90 transition-colors shadow-md">
+            <div className="w-12 h-12 flex items-center justify-center mb-3 text-funnel-green">
               <Plus className="w-8 h-8" />
             </div>
-            <span className="text-sm text-center font-medium">E muito mais</span>
+            <span className="text-sm text-center font-medium text-gray-800">E muito mais</span>
           </div>
         </div>
         
