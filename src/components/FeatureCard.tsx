@@ -38,13 +38,24 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       )}
       onClick={onClick}
     >
-      <div className="mb-6">
+      <div className={cn(
+        "mb-6",
+        isActive ? "text-white" : "text-funnel-green"
+      )}>
         {icon}
       </div>
       
-      <h3 className={cn("text-xl font-bold mb-3", isActive ? "text-white" : "text-funnel-green")}>{title}</h3>
+      <h3 className={cn(
+        "text-xl font-bold mb-3", 
+        isActive ? "text-white" : "text-funnel-green"
+      )}>
+        {title}
+      </h3>
       
-      <p className={cn("mb-6", isActive ? "text-white/90" : textColor)}>
+      <p className={cn(
+        "mb-6", 
+        isActive ? "text-white/90" : textColor
+      )}>
         {description}
       </p>
       

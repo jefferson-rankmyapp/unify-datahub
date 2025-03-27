@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import Hero from '@/components/Hero';
 import Button from '@/components/Button';
 import ClientLogos from '@/components/ClientLogos';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Database, FileText, BarChart3, Share, Network } from 'lucide-react';
 import Connectors from '@/components/Connectors';
 import Destinations from '@/components/Destinations';
 import InteractiveFeatures from '@/components/InteractiveFeatures';
@@ -10,12 +11,19 @@ import TeamTabs from '@/components/TeamTabs';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 const Index = () => {
-  // Load first hero image
-  const heroImage = "/lovable-uploads/ea649eec-c777-4ad0-8176-3cc5b42fa2e6.png";
+  // State for auto-scrolling client logos
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+
+    // Set up the infinite scroll animation for client logos
+    const interval = setInterval(() => {
+      setScrollPosition(prev => (prev + 1) % 100);
+    }, 50);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -24,10 +32,10 @@ const Index = () => {
       <Hero
         title="Transforme dados em decisões de marketing impactantes"
         subtitle="Diga adeus às suposições. Prove a eficácia do seu marketing e conduza campanhas de alto desempenho com a inteligência de dados precisa do Unify DataHub."
-        primaryCta={{ text: "Comece de graça", href: "/cadastro" }}
-        secondaryCta={{ text: "Obtenha uma demonstração", href: "/demonstracao" }}
-        image={heroImage}
-        imageAlt="Mulher com roupas estilizadas representando transformação de dados em marketing"
+        primaryCta={{ text: "Comece de graça", href: "#conectores" }}
+        secondaryCta={{ text: "Obtenha uma demonstração", href: "#testimonials" }}
+        image="/lovable-uploads/0bfe6c90-659d-4ec7-9668-5db2fe33ed6f.png"
+        imageAlt="Transformação de dados em marketing"
       />
 
       {/* Dashboard Preview Section */}
@@ -70,9 +78,9 @@ const Index = () => {
             </div>
             <div className="lg:col-span-10 overflow-hidden rounded-lg shadow-2xl">
               <img 
-                src="/lovable-uploads/dc8074ef-2f7f-40fa-b366-208172acb19f.png" 
+                src="https://cdn.dribbble.com/users/2469034/screenshots/6714468/comp_1.gif" 
                 alt="Dashboard do Unify DataHub mostrando análises de marketing" 
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
@@ -82,8 +90,8 @@ const Index = () => {
       {/* Interactive Features Section */}
       <InteractiveFeatures />
 
-      {/* Client Logos Section */}
-      <section className="bg-funnel-green py-16">
+      {/* Client Logos Section with infinite scroll */}
+      <section className="bg-funnel-green py-16 overflow-hidden">
         <div className="container-padding max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
@@ -91,8 +99,23 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
-            <img src="/lovable-uploads/1113bd9a-71a1-4030-b648-ba09b67b57d6.png" alt="Logos dos clientes" className="w-full h-auto" />
+          <div className="relative h-[400px]" style={{ overflow: 'hidden' }}>
+            <div 
+              className="absolute w-full transition-transform duration-500 ease-linear"
+              style={{ transform: `translateY(-${scrollPosition}%)` }}
+            >
+              <img 
+                src="/lovable-uploads/0bfe6c90-659d-4ec7-9668-5db2fe33ed6f.png" 
+                alt="Logos dos clientes em scroll infinito" 
+                className="w-full"
+              />
+              {/* Duplicate the image for seamless loop */}
+              <img 
+                src="/lovable-uploads/0bfe6c90-659d-4ec7-9668-5db2fe33ed6f.png" 
+                alt="Logos dos clientes em scroll infinito" 
+                className="w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -103,19 +126,19 @@ const Index = () => {
         title="Conectores poderosos"
         description="Integre-se facilmente com todas as plataformas de marketing e publicidade que você utiliza no seu dia a dia."
         platforms={[
-          { name: "Google Play Store", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=GP" },
-          { name: "Apple Store", icon: "https://via.placeholder.com/64x64/000000/FFFFFF?text=AS" },
-          { name: "Google Ads", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=GA" },
-          { name: "GA4", icon: "https://via.placeholder.com/64x64/F4B400/FFFFFF?text=GA4" },
-          { name: "DV 360", icon: "https://via.placeholder.com/64x64/0F9D58/FFFFFF?text=DV" },
-          { name: "AppsFlyer", icon: "https://via.placeholder.com/64x64/FF6B22/FFFFFF?text=AF" },
-          { name: "Amplitude", icon: "https://via.placeholder.com/64x64/4169E1/FFFFFF?text=AM" },
-          { name: "LinkedIn", icon: "https://via.placeholder.com/64x64/0077B5/FFFFFF?text=LI" },
-          { name: "X", icon: "https://via.placeholder.com/64x64/1DA1F2/FFFFFF?text=X" },
-          { name: "Instagram", icon: "https://via.placeholder.com/64x64/C13584/FFFFFF?text=IG" },
-          { name: "TikTok", icon: "https://via.placeholder.com/64x64/000000/FFFFFF?text=TT" },
-          { name: "Salesforce", icon: "https://via.placeholder.com/64x64/00A1E0/FFFFFF?text=SF" },
-          { name: "HubSpot", icon: "https://via.placeholder.com/64x64/FF7A59/FFFFFF?text=HS" },
+          { name: "Google Play Store", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1200px-Google_Play_Store_badge_EN.svg.png" },
+          { name: "Apple Store", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1200px-Download_on_the_App_Store_Badge.svg.png" },
+          { name: "Google Ads", icon: "https://cdn.worldvectorlogo.com/logos/google-ads-2.svg" },
+          { name: "GA4", icon: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg" },
+          { name: "DV 360", icon: "https://www.gstatic.com/images/branding/product/2x/display_video_48dp.png" },
+          { name: "AppsFlyer", icon: "https://www.appsflyer.com/wp-content/uploads/2020/03/AF-icon-blue.svg" },
+          { name: "Amplitude", icon: "https://amplitude.com/favicon.ico" },
+          { name: "LinkedIn", icon: "https://cdn-icons-png.flaticon.com/512/174/174857.png" },
+          { name: "X", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/X_logo_2023_%28white%29.png/800px-X_logo_2023_%28white%29.png" },
+          { name: "Instagram", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" },
+          { name: "TikTok", icon: "https://sf-tb-sg.ibytedtos.com/obj/eden-sg/uhtyvueh7nulogpogiyf/tiktok-icon2.png" },
+          { name: "Salesforce", icon: "https://www.salesforce.com/etc.clientlibs/settings/wcm/designs/sfdc-www/clientlibs/clientlib-site/resources/favicon.ico" },
+          { name: "HubSpot", icon: "https://uploads-ssl.webflow.com/63c75be5f7390d0e2977557d/6400d91ffdf1c6ad847b1abe_9CbZ6EwFPQPjbz8YAkEw8gN2Y5G2hTcrdZVqeOqk2rO3CWciGx9QTFPhqD6U6gUHOF3wd2fQRPqhP7HK_mBsdJFYXNEJjnwjbvjeGCWOqzOcnDfMxiiJ1YewIhTRy0V6Dt5_KcVA.png" },
         ]}
         buttonText="Navegar pelos conectores"
         buttonLink="#conectores"
@@ -127,14 +150,14 @@ const Index = () => {
         title="Destinos de dados"
         description="Envie seus dados para qualquer ferramenta de análise ou plataforma de BI que você precisar."
         destinations={[
-          { name: "Power BI", icon: "https://via.placeholder.com/64x64/F2C811/000000?text=PBI" },
-          { name: "Looker", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=LK" },
-          { name: "Tableau", icon: "https://via.placeholder.com/64x64/E97627/FFFFFF?text=TB" },
-          { name: "Excel", icon: "https://via.placeholder.com/64x64/217346/FFFFFF?text=XL" },
-          { name: "Google Sheets", icon: "https://via.placeholder.com/64x64/0F9D58/FFFFFF?text=GS" },
-          { name: "Big Query", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=BQ" },
-          { name: "Parquet", icon: "https://via.placeholder.com/64x64/8797FF/FFFFFF?text=PQ" },
-          { name: "CSV", icon: "https://via.placeholder.com/64x64/54585A/FFFFFF?text=CSV" },
+          { name: "Power BI", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Power_BI_logo.svg/1200px-Power_BI_logo.svg.png" },
+          { name: "Looker", icon: "https://www.gstatic.com/images/branding/product/2x/looker_48dp.png" },
+          { name: "Tableau", icon: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg" },
+          { name: "Excel", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/2203px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png" },
+          { name: "Google Sheets", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/1498px-Google_Sheets_logo_%282014-2020%29.svg.png" },
+          { name: "Big Query", icon: "https://cdn.worldvectorlogo.com/logos/google-bigquery-logo-1.svg" },
+          { name: "Parquet", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Apache_Parquet_logo.svg/1200px-Apache_Parquet_logo.svg.png" },
+          { name: "CSV", icon: "https://cdn-icons-png.flaticon.com/512/6133/6133991.png" },
         ]}
         buttonText="Procurar destinos"
         buttonLink="#destinos"
@@ -183,7 +206,7 @@ const Index = () => {
             <Button 
               variant="primary" 
               size="lg"
-              href="/demonstracao"
+              href="#conectores"
               className="bg-black text-white hover:bg-black/90"
             >
               Obtenha uma demonstração
@@ -191,7 +214,7 @@ const Index = () => {
             <Button 
               variant="secondary" 
               size="lg"
-              href="/comece-gratis"
+              href="#destinos"
               className="border-black text-black hover:bg-black/5"
             >
               Comece de graça
@@ -213,11 +236,11 @@ const Index = () => {
           <div className="flex justify-center space-x-8 mb-16">
             <div className="flex items-center">
               <div className="text-amber-400">★★★★½</div>
-              <img src="https://via.placeholder.com/100x30" alt="G2 rating" className="h-6 ml-2" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/G2_Crowd_logo.svg/1280px-G2_Crowd_logo.svg.png" alt="G2 rating" className="h-6 ml-2" />
             </div>
             <div className="flex items-center">
               <div className="text-amber-400">★★★★½</div>
-              <img src="https://via.placeholder.com/100x30" alt="Capterra rating" className="h-6 ml-2" />
+              <img src="https://www.capterra.com/assets/logo-3ab34c16a6bdc16c29fd0aae7df8106e3d788d7d1a79564420e8bfbef90bb3c5.svg" alt="Capterra rating" className="h-6 ml-2" />
             </div>
           </div>
         </div>
@@ -230,8 +253,8 @@ const Index = () => {
             <div className="relative">
               <div className="absolute -left-10 top-1/2 transform -translate-y-1/2 w-32 h-32 bg-funnel-red rounded-full opacity-70"></div>
               <img 
-                src="/lovable-uploads/2a961a0e-dfd7-4d0c-a70a-a740ba98ec03.png" 
-                alt="Performance chart" 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1715&q=80" 
+                alt="Performance chart showing growth" 
                 className="relative z-10 rounded-lg shadow-xl"
               />
             </div>
@@ -248,7 +271,7 @@ const Index = () => {
                 
                 <Button 
                   variant="primary" 
-                  href="/beneficios-b2c"
+                  href="#conectores"
                   className="mt-4"
                 >
                   Veja os benefícios para B2C
@@ -274,14 +297,14 @@ const Index = () => {
                 </div>
                 <div className="h-12 w-12 rounded-full bg-gray-200 overflow-hidden">
                   <img 
-                    src="https://via.placeholder.com/48x48" 
+                    src="https://randomuser.me/api/portraits/women/44.jpg" 
                     alt="Team member" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="h-12 w-12 rounded-full bg-gray-200 overflow-hidden">
                   <img 
-                    src="https://via.placeholder.com/48x48" 
+                    src="https://randomuser.me/api/portraits/men/32.jpg" 
                     alt="Team member" 
                     className="w-full h-full object-cover"
                   />
@@ -322,14 +345,6 @@ const Index = () => {
                   <div>Fale sobre como desbloquear mais valor dos seus dados</div>
                 </li>
               </ul>
-              
-              <div className="flex flex-wrap gap-4">
-                <img 
-                  src="/lovable-uploads/36786d39-790c-4377-ae20-eb1166084deb.png" 
-                  alt="Award badges" 
-                  className="h-24 w-auto"
-                />
-              </div>
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-sm">

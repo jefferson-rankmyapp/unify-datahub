@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { User } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 interface TestimonialCardProps {
   quote: string;
@@ -25,6 +27,16 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   bgColor = "bg-white",
   textColor = "text-gray-800"
 }) => {
+  // Get the initials of the author for the avatar fallback
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(part => part.charAt(0))
+      .join('')
+      .toUpperCase()
+      .substring(0, 2);
+  };
+
   return (
     <div className={cn(
       "rounded-lg p-8 shadow-sm",
@@ -46,13 +58,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </blockquote>
       
       <div className="flex items-center">
-        {image && (
-          <img 
-            src={image} 
-            alt={author} 
-            className="w-12 h-12 rounded-full mr-4 object-cover"
-          />
-        )}
+        <Avatar className="w-12 h-12 mr-4">
+          {image ? (
+            <AvatarImage src={image} alt={author} />
+          ) : (
+            <AvatarFallback className="bg-funnel-green text-white">{getInitials(author)}</AvatarFallback>
+          )}
+        </Avatar>
         
         <div>
           <div className={cn("font-semibold", textColor)}>{author}</div>

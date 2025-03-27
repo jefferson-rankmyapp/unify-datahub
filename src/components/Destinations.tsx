@@ -13,6 +13,7 @@ interface DestinationsProps {
   }[];
   buttonText: string;
   buttonLink: string;
+  id?: string; // Add the id prop
 }
 
 const Destinations: React.FC<DestinationsProps> = ({
@@ -21,10 +22,11 @@ const Destinations: React.FC<DestinationsProps> = ({
   description,
   destinations,
   buttonText,
-  buttonLink
+  buttonLink,
+  id
 }) => {
   return (
-    <section className={cn(
+    <section id={id} className={cn(
       "py-24 bg-gray-100",
       className
     )}>

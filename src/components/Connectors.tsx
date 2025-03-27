@@ -13,6 +13,7 @@ interface ConnectorsProps {
   }[];
   buttonText: string;
   buttonLink: string;
+  id?: string; // Add the id prop
 }
 
 const Connectors: React.FC<ConnectorsProps> = ({
@@ -21,10 +22,11 @@ const Connectors: React.FC<ConnectorsProps> = ({
   description,
   platforms,
   buttonText,
-  buttonLink
+  buttonLink,
+  id
 }) => {
   return (
-    <section className={cn(
+    <section id={id} className={cn(
       "py-24 bg-funnel-green text-white",
       className
     )}>

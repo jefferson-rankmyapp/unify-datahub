@@ -27,7 +27,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className }) 
             author="Carlos Silva"
             role="Diretor de Marketing"
             company="TechBrasil"
-            image="/lovable-uploads/73c1dba3-b542-43ad-9447-e1da66ce0f52.png"
+            image="https://randomuser.me/api/portraits/men/54.jpg"
             bgColor="bg-white/10"
             textColor="text-white"
           />
@@ -37,7 +37,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className }) 
             author="Fernanda Rocha"
             role="Analista de Dados"
             company="E-commerce Express"
-            image="/lovable-uploads/73c1dba3-b542-43ad-9447-e1da66ce0f52.png"
+            image="https://randomuser.me/api/portraits/women/68.jpg"
             bgColor="bg-white/10"
             textColor="text-white"
           />
@@ -47,7 +47,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className }) 
             author="Pedro Almeida"
             role="CEO"
             company="Agência Digital"
-            image="/lovable-uploads/73c1dba3-b542-43ad-9447-e1da66ce0f52.png"
+            image="https://randomuser.me/api/portraits/men/32.jpg"
             bgColor="bg-white/10"
             textColor="text-white"
           />
