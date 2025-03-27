@@ -1,11 +1,13 @@
-
 import React, { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import Button from '@/components/Button';
-import FeatureCard from '@/components/FeatureCard';
-import TestimonialCard from '@/components/TestimonialCard';
 import ClientLogos from '@/components/ClientLogos';
 import { ArrowRight } from 'lucide-react';
+import Connectors from '@/components/Connectors';
+import Destinations from '@/components/Destinations';
+import InteractiveFeatures from '@/components/InteractiveFeatures';
+import TeamTabs from '@/components/TeamTabs';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 const Index = () => {
   // Load first hero image
@@ -21,7 +23,7 @@ const Index = () => {
       {/* Hero Section */}
       <Hero
         title="Transforme dados em decisões de marketing impactantes"
-        subtitle="Diga adeus às suposições. Prove a eficácia do seu marketing e conduza campanhas de alto desempenho com a inteligência de dados precisa do Funnel."
+        subtitle="Diga adeus às suposições. Prove a eficácia do seu marketing e conduza campanhas de alto desempenho com a inteligência de dados precisa do Unify DataHub."
         primaryCta={{ text: "Comece de graça", href: "/cadastro" }}
         secondaryCta={{ text: "Obtenha uma demonstração", href: "/demonstracao" }}
         image={heroImage}
@@ -69,7 +71,7 @@ const Index = () => {
             <div className="lg:col-span-10 overflow-hidden rounded-lg shadow-2xl">
               <img 
                 src="/lovable-uploads/dc8074ef-2f7f-40fa-b366-208172acb19f.png" 
-                alt="Dashboard do Funnel mostrando análises de marketing" 
+                alt="Dashboard do Unify DataHub mostrando análises de marketing" 
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -77,67 +79,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-funnel-green text-white py-24">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <FeatureCard
-              icon={
-                <svg className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              }
-              title="Integração de dados"
-              description="Envie todos os seus dados de marketing para seu depósito."
-              link="/integracao-dados"
-              linkText="Saber mais"
-              bgColor="bg-funnel-green"
-              className="border border-white/20"
-            />
-            
-            {/* Feature 2 */}
-            <FeatureCard
-              icon={
-                <svg className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 8V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              }
-              title="Medição avançada"
-              description="Maximize o crescimento com medição unificada."
-              link="/medicao-avancada"
-              linkText="Saber mais"
-              bgColor="bg-funnel-green"
-              className="border border-white/20"
-            />
-            
-            {/* Feature 3 */}
-            <FeatureCard
-              icon={
-                <svg className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7V21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H2V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M22 3H16C14.9391 3 13.9217 3.42143 13.1716 4.17157C12.4214 4.92172 12 5.93913 12 7V21C12 20.2044 12.3161 19.4413 12.8787 18.8787C13.4413 18.3161 14.2044 18 15 18H22V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              }
-              title="Relatório de campanha"
-              description="Crie e compartilhe relatórios de marketing poderosos."
-              link="/relatorio-campanha"
-              linkText="Saber mais"
-              bgColor="bg-funnel-green"
-              className="border border-white/20"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Interactive Features Section */}
+      <InteractiveFeatures />
 
       {/* Client Logos Section */}
       <section className="bg-funnel-green py-16">
         <div className="container-padding max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              Desbloqueando inteligência de marketing para mais de 2.500 clientes
+              Desbloqueando inteligência de marketing para centenas de clientes
             </h2>
           </div>
           
@@ -147,110 +97,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Integration Section */}
-      <section className="bg-funnel-green text-white py-24">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h5 className="text-sm uppercase tracking-wider mb-3 animate-fade-in opacity-80">INTEGRAÇÕES PODEROSAS</h5>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Unifique dados sem limites</h2>
-            <p className="text-lg max-w-3xl mx-auto animate-fade-in opacity-90">
-              Com integrações robustas da maior biblioteca de conectores e destinos de dados do setor, você pode reunir todos os seus dados em um só lugar, sem nenhuma limitação.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
-            <Button 
-              variant="secondary" 
-              className="bg-white text-funnel-green hover:bg-white/90"
-              href="/conectores"
-            >
-              Navegar pelos conectores
-            </Button>
-            <Button 
-              variant="secondary" 
-              className="bg-white text-funnel-green hover:bg-white/90"
-              href="/destinos"
-            >
-              Procurar destinos
-            </Button>
-          </div>
-          
-          <div className="mt-16 bg-funnel-green/30 p-4 rounded-xl overflow-x-auto">
-            <div className="flex space-x-6 min-w-max py-4">
-              <img src="/lovable-uploads/78fd1264-e7aa-43ff-9b47-39b52a1e860d.png" alt="Social and advertising platforms integrations" className="h-16" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Connectors Section */}
+      <Connectors 
+        id="conectores"
+        title="Conectores poderosos"
+        description="Integre-se facilmente com todas as plataformas de marketing e publicidade que você utiliza no seu dia a dia."
+        platforms={[
+          { name: "Google Play Store", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=GP" },
+          { name: "Apple Store", icon: "https://via.placeholder.com/64x64/000000/FFFFFF?text=AS" },
+          { name: "Google Ads", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=GA" },
+          { name: "GA4", icon: "https://via.placeholder.com/64x64/F4B400/FFFFFF?text=GA4" },
+          { name: "DV 360", icon: "https://via.placeholder.com/64x64/0F9D58/FFFFFF?text=DV" },
+          { name: "AppsFlyer", icon: "https://via.placeholder.com/64x64/FF6B22/FFFFFF?text=AF" },
+          { name: "Amplitude", icon: "https://via.placeholder.com/64x64/4169E1/FFFFFF?text=AM" },
+          { name: "LinkedIn", icon: "https://via.placeholder.com/64x64/0077B5/FFFFFF?text=LI" },
+          { name: "X", icon: "https://via.placeholder.com/64x64/1DA1F2/FFFFFF?text=X" },
+          { name: "Instagram", icon: "https://via.placeholder.com/64x64/C13584/FFFFFF?text=IG" },
+          { name: "TikTok", icon: "https://via.placeholder.com/64x64/000000/FFFFFF?text=TT" },
+          { name: "Salesforce", icon: "https://via.placeholder.com/64x64/00A1E0/FFFFFF?text=SF" },
+          { name: "HubSpot", icon: "https://via.placeholder.com/64x64/FF7A59/FFFFFF?text=HS" },
+        ]}
+        buttonText="Navegar pelos conectores"
+        buttonLink="#conectores"
+      />
 
-      {/* Collaboration Section */}
-      <section className="bg-gray-100 py-24">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-funnel-green">
-              Trabalhar com o Funnel abre canais de comunicação entre equipes. Marketing, TI e finanças podem colaborar intuitivamente com dados para entender o impacto do seu negócio juntos.
-            </h2>
-          </div>
-          
-          <div className="relative">
-            {/* Tabs */}
-            <div className="flex border-b border-gray-300 mb-8 overflow-x-auto">
-              <button className="py-4 px-6 font-medium text-funnel-green border-b-2 border-funnel-green">
-                Profissionais de marketing
-              </button>
-              <button className="py-4 px-6 font-medium text-gray-500 hover:text-funnel-green transition-colors">
-                Equipes de dados e TI
-              </button>
-              <button className="py-4 px-6 font-medium text-gray-500 hover:text-funnel-green transition-colors">
-                Agências
-              </button>
-            </div>
-            
-            {/* Tab Content */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 shadow-sm">
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <div className="mt-1 mr-3 text-funnel-green">•</div>
-                  <div>Conte com conectores de dados sempre ativos e totalmente mantidos</div>
-                </li>
-                <li className="flex items-start">
-                  <div className="mt-1 mr-3 text-funnel-green">•</div>
-                  <div>Forneça dados confiáveis e normalizados para sua organização</div>
-                </li>
-                <li className="flex items-start">
-                  <div className="mt-1 mr-3 text-funnel-green">•</div>
-                  <div>Envie dados para mais de 20 ferramentas, incluindo data warehouses</div>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Testimonial */}
-            <div className="mt-12 bg-white rounded-lg p-8 border border-gray-200 shadow-sm">
-              <div className="mb-4">
-                <img src="https://via.placeholder.com/150x60" alt="Sephora" className="h-8" />
-              </div>
-              
-              <div className="text-5xl font-bold text-funnel-green mb-2">41%</div>
-              <div className="text-gray-500 mb-8">saved on data processing costs</div>
-              
-              <blockquote className="text-gray-700 mb-8">
-                "With data consolidated in Funnel, we can output clean data tables with just the dimensions and metrics we need, instead of having to consolidate hundreds of tables in BigQuery."
-              </blockquote>
-              
-              <div className="flex items-center">
-                <div className="mr-4">
-                  <img src="https://via.placeholder.com/48x48" alt="Hamis Badarou" className="w-12 h-12 rounded-full" />
-                </div>
-                <div>
-                  <div className="font-semibold">Hamis Badarou</div>
-                  <div className="text-gray-500">Chief Analytics Officer</div>
-                  <div className="text-gray-500">Hanalytics, partner of Sephora</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Destinations Section */}
+      <Destinations
+        id="destinos"
+        title="Destinos de dados"
+        description="Envie seus dados para qualquer ferramenta de análise ou plataforma de BI que você precisar."
+        destinations={[
+          { name: "Power BI", icon: "https://via.placeholder.com/64x64/F2C811/000000?text=PBI" },
+          { name: "Looker", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=LK" },
+          { name: "Tableau", icon: "https://via.placeholder.com/64x64/E97627/FFFFFF?text=TB" },
+          { name: "Excel", icon: "https://via.placeholder.com/64x64/217346/FFFFFF?text=XL" },
+          { name: "Google Sheets", icon: "https://via.placeholder.com/64x64/0F9D58/FFFFFF?text=GS" },
+          { name: "Big Query", icon: "https://via.placeholder.com/64x64/4285F4/FFFFFF?text=BQ" },
+          { name: "Parquet", icon: "https://via.placeholder.com/64x64/8797FF/FFFFFF?text=PQ" },
+          { name: "CSV", icon: "https://via.placeholder.com/64x64/54585A/FFFFFF?text=CSV" },
+        ]}
+        buttonText="Procurar destinos"
+        buttonLink="#destinos"
+      />
+
+      {/* Team Collaboration Section */}
+      <TeamTabs />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Success Movement Section */}
       <section className="py-24 bg-gray-100">
@@ -312,7 +206,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Desempenho de potência</h2>
             <p className="text-lg max-w-3xl mx-auto opacity-80">
-              O Funnel é mais do que apenas uma ferramenta de dados de marketing. Com dados e análises juntos em uma plataforma, você obtém inteligência robusta e confiável que pode colocar em prática todos os dias.
+              O Unify DataHub é mais do que apenas uma ferramenta de dados de marketing. Com dados e análises juntos em uma plataforma, você obtém inteligência robusta e confiável que pode colocar em prática todos os dias.
             </p>
           </div>
           
@@ -326,233 +220,9 @@ const Index = () => {
               <img src="https://via.placeholder.com/100x30" alt="Capterra rating" className="h-6 ml-2" />
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* Feature cards will go here as needed */}
-          </div>
         </div>
       </section>
       
-      {/* Feature Sections */}
-      <section className="py-16 bg-funnel-pink">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 gap-8">
-            <div className="p-8">
-              <div className="mb-6">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-funnel-green">
-                  <path d="M6 18C7.65685 18 9 16.6569 9 15C9 13.3431 7.65685 12 6 12C4.34315 12 3 13.3431 3 15C3 16.6569 4.34315 18 6 18Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M18 18C19.6569 18 21 16.6569 21 15C21 13.3431 19.6569 12 18 12C16.3431 12 15 13.3431 15 15C15 16.6569 16.3431 18 18 18Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M3 15H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 15H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M9 15L15 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M9 9L15 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-3">Integração de dados</h3>
-              <p className="text-gray-700 mb-4">
-                Obtenha seus dados onde você quiser, perfeitamente. Manutenção zero, sem erros manuais – apenas insights e implementação mais rápidos.
-              </p>
-              
-              <a 
-                href="/integracao-dados" 
-                className="inline-flex items-center text-funnel-green font-medium hover:underline"
-              >
-                Reúna seus dados <ArrowRight size={16} className="ml-2" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="py-16 bg-funnel-red">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 gap-8">
-            <div className="p-8 text-white">
-              <div className="mb-6">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 8V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-3">Medição avançada</h3>
-              <p className="mb-4 opacity-90">
-                Veja o verdadeiro impacto de suas campanhas com modelagem de IA, insights profundos e recomendações precisas.
-              </p>
-              
-              <a 
-                href="/medicao-avancada" 
-                className="inline-flex items-center text-white font-medium hover:underline"
-              >
-                Obtenha insights que valem a pena <ArrowRight size={16} className="ml-2" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="py-16 bg-funnel-blue">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 gap-8">
-            <div className="p-8 text-white">
-              <div className="mb-6">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18 20V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 20V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 20V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-3">Relatório de campanha</h3>
-              <p className="mb-4 opacity-90">
-                Economize horas de trabalho com relatórios automatizados. Com atualizações em tempo real e dados precisos, você está sempre pronto para compartilhar resultados.
-              </p>
-              
-              <a 
-                href="/relatorio-campanha" 
-                className="inline-flex items-center text-white font-medium hover:underline"
-              >
-                Comece a automatizar relatórios <ArrowRight size={16} className="ml-2" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section className="py-16 bg-funnel-gray">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 gap-8">
-            <div className="p-8">
-              <div className="mb-6">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-funnel-green">
-                  <path d="M22 12H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M5 12V19C5 19.5304 5.21071 20.0391 5.58579 20.4142C5.96086 20.7893 6.46957 21 7 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 12V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M2 12L12 2L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-3">Centro de dados de funil</h3>
-              <p className="text-gray-700 mb-4">
-                A base que torna o Funnel diferente. O Data Hub armazena seus dados com segurança – em escala – e os leva para onde eles precisam estar.
-              </p>
-              
-              <a 
-                href="/centro-dados" 
-                className="inline-flex items-center text-funnel-green font-medium hover:underline"
-              >
-                Gerencie seus dados <ArrowRight size={16} className="ml-2" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call-to-Action Section */}
-      <section className="bg-black text-white py-16">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Transforme dados em inteligência</h2>
-              <p className="text-lg mb-6 opacity-80">
-                Desbloqueie insights avançados para um crescimento perene.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="secondary" 
-                  href="/plataforma"
-                  className="bg-white text-black hover:bg-white/90"
-                >
-                  Descubra a plataforma
-                </Button>
-                <Button 
-                  variant="primary" 
-                  href="/demonstracao"
-                  className="bg-black border border-white text-white hover:bg-white/10"
-                >
-                  Obtenha uma demonstração
-                </Button>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-3 gap-4">
-              <div className="rounded-lg overflow-hidden">
-                <img 
-                  src="/lovable-uploads/76ab8a41-c5f7-46a4-8b09-9f92ab8168db.png" 
-                  alt="Digital Reach case study" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-lg overflow-hidden">
-                <img 
-                  src="/lovable-uploads/b3477c1d-7be9-44e5-9de9-ecd3a0c79abd.png" 
-                  alt="Sparro case study" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-lg overflow-hidden">
-                <img 
-                  src="/lovable-uploads/4f78fb1a-1512-4ecf-b3c2-59923ed8949a.png" 
-                  alt="Broadhead case study" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Marketing Note Section */}
-      <section className="bg-funnel-pink py-24">
-        <div className="container-padding max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <img 
-                src="/lovable-uploads/396724b3-eb28-429f-b1ea-863382101fc1.png" 
-                alt="Marketing guide" 
-                className="w-full max-w-md mx-auto shadow-xl rounded-lg transform rotate-3 hover:rotate-0 transition-transform duration-500"
-              />
-            </div>
-            
-            <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold mb-4">Marketing é torcida</h2>
-              <p className="text-lg mb-8">
-                Quando algo está fora de sincronia, isso fica evidente. Saiba como o Funnel Measurement pode ajudar a alinhar sua estratégia e obter o máximo de seus gastos.
-              </p>
-              <Button 
-                variant="primary" 
-                href="/saber-mais"
-                className="bg-black text-white hover:bg-black/90"
-              >
-                Saber mais
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="bg-black text-white py-24">
-        <div className="container-padding max-w-4xl mx-auto">
-          <blockquote className="text-3xl md:text-4xl font-bold mb-8 text-center">
-            "Antes do Funnel, olhávamos 100% pelo espelho retrovisor – e agora olhamos pela janela da frente para ver o que está por vir"
-          </blockquote>
-          
-          <div className="flex flex-col items-center text-center">
-            <img 
-              src="/lovable-uploads/73c1dba3-b542-43ad-9447-e1da66ce0f52.png" 
-              alt="Nick Cudahy" 
-              className="w-16 h-16 rounded-full object-cover mb-4"
-            />
-            <div className="font-semibold">Nick Cudahy,</div>
-            <div className="text-gray-400">Diretor de Desempenho e Crescimento de Mídia do Grupo</div>
-            <div className="text-xl font-bold mt-2">Digicel</div>
-          </div>
-        </div>
-      </section>
-
       {/* Performance Metrics Section */}
       <section className="bg-gray-100 py-24">
         <div className="container-padding max-w-7xl mx-auto">
@@ -573,7 +243,7 @@ const Index = () => {
                 </h2>
                 
                 <p className="text-lg">
-                  Os clientes do Funnel veem um aumento médio nos retornos sobre os gastos com publicidade de 26% nos primeiros dois anos de uso do Funnel ¹
+                  Os clientes do Unify veem um aumento médio nos retornos sobre os gastos com publicidade de 26% nos primeiros dois anos de uso da plataforma ¹
                 </p>
                 
                 <Button 
@@ -585,7 +255,7 @@ const Index = () => {
                 </Button>
                 
                 <div className="text-sm text-gray-500 mt-8">
-                  ¹ Dados de uma pesquisa conduzida pela Funnel em julho de 2024. Dados agregados de gastos com publicidade e receita foram coletados de 350 clientes participantes no setor de comércio eletrônico e varejo. A eficiência de marketing foi calculada como a receita online relatada dividida pelo gasto agregado com publicidade.
+                  ¹ Dados de uma pesquisa conduzida pela Unify em julho de 2024. Dados agregados de gastos com publicidade e receita foram coletados de clientes participantes no setor de comércio eletrônico e varejo.
                 </div>
               </div>
             </div>
@@ -600,7 +270,7 @@ const Index = () => {
             <div>
               <div className="flex space-x-2 mb-6">
                 <div className="h-12 w-12 rounded-full bg-funnel-green flex items-center justify-center">
-                  <span className="text-white font-bold">F</span>
+                  <span className="text-white font-bold">U</span>
                 </div>
                 <div className="h-12 w-12 rounded-full bg-gray-200 overflow-hidden">
                   <img 
@@ -619,7 +289,7 @@ const Index = () => {
               </div>
               
               <h2 className="text-3xl font-bold mb-4">
-                Interessado em descobrir se o Funnel pode funcionar para você?
+                Interessado em descobrir se o Unify DataHub pode funcionar para você?
               </h2>
               
               <p className="text-lg mb-4">
@@ -641,7 +311,7 @@ const Index = () => {
                       <path d="M5 12L10 17L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <div>Explore os recursos mais relevantes do Funnel</div>
+                  <div>Explore os recursos mais relevantes do Unify DataHub</div>
                 </li>
                 <li className="flex items-center">
                   <div className="mr-2 text-funnel-green">

@@ -8,7 +8,10 @@ interface TestimonialCardProps {
   role: string;
   company: string;
   image?: string;
+  companyLogo?: string; 
   className?: string;
+  bgColor?: string;
+  textColor?: string;
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
@@ -17,14 +20,28 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   role,
   company,
   image,
-  className
+  companyLogo,
+  className,
+  bgColor = "bg-white",
+  textColor = "text-gray-800"
 }) => {
   return (
     <div className={cn(
-      "bg-white rounded-lg p-8 shadow-sm",
+      "rounded-lg p-8 shadow-sm",
+      bgColor,
       className
     )}>
-      <blockquote className="text-lg md:text-xl font-medium mb-6">
+      {companyLogo && (
+        <div className="mb-6">
+          <img 
+            src={companyLogo} 
+            alt={company} 
+            className="h-8 object-contain"
+          />
+        </div>
+      )}
+      
+      <blockquote className={cn("text-lg md:text-xl font-medium mb-6", textColor)}>
         "{quote}"
       </blockquote>
       
@@ -38,7 +55,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         )}
         
         <div>
-          <div className="font-semibold">{author}</div>
+          <div className={cn("font-semibold", textColor)}>{author}</div>
           <div className="text-gray-600 text-sm">{role}</div>
           <div className="text-gray-600 text-sm">{company}</div>
         </div>
