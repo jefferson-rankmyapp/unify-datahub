@@ -10,7 +10,7 @@ interface TestimonialsSectionProps {
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className }) => {
   return (
     <section id="testimonials" className={cn(
-      "py-24 bg-funnel-blue text-white",
+      "py-24 bg-unify-blue text-white",
       className
     )}>
       <div className="container-padding max-w-7xl mx-auto">
@@ -36,7 +36,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className }) 
             quote="Antes do Unify, olhávamos 100% pelo espelho retrovisor – e agora olhamos pela janela da frente para ver o que está por vir."
             author="Ana Costa"
             role="Analista de Dados"
-            company="E-commerce Express"
+            company="E-commerce Brasil"
             image="https://randomuser.me/api/portraits/women/28.jpg"
             bgColor="bg-white/10"
             textColor="text-white"

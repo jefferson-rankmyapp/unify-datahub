@@ -4,7 +4,7 @@ import { Youtube, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-funnel-green text-white py-16">
+    <footer className="bg-unify-blue text-white py-16">
       <div className="container-padding max-w-7xl mx-auto">
         {/* Logo and brand */}
         <div className="mb-16">
@@ -28,8 +28,7 @@ const Footer = () => {
             <h6 className="text-lg font-semibold mb-4">CONTATO</h6>
             <ul className="space-y-2">
               <li><Link to="/demonstracao" className="hover:underline">Agende uma demonstração</Link></li>
-              <li><a href="mailto:contato@unify.com" className="hover:underline">contato@unify.com</a></li>
-              <li><a href="tel:+5511999999999" className="hover:underline">+55 11 99999-9999</a></li>
+              <li><a href="mailto:contato@rankmyapp.com.br" className="hover:underline">contato@rankmyapp.com.br</a></li>
             </ul>
           </div>
           

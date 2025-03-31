@@ -27,7 +27,7 @@ const Connectors: React.FC<ConnectorsProps> = ({
 }) => {
   return (
     <section id={id} className={cn(
-      "py-24 bg-funnel-green text-white",
+      "py-24 bg-unify-blue text-white",
       className
     )}>
       <div className="container-padding max-w-7xl mx-auto">
@@ -51,7 +51,7 @@ const Connectors: React.FC<ConnectorsProps> = ({
                   className="w-12 h-12 object-contain mb-3"
                 />
               ) : (
-                <div className="w-12 h-12 flex items-center justify-center mb-3 text-funnel-green">
+                <div className="w-12 h-12 flex items-center justify-center mb-3 text-unify-blue">
                   <Plus className="w-8 h-8" />
                 </div>
               )}
@@ -60,7 +60,7 @@ const Connectors: React.FC<ConnectorsProps> = ({
           ))}
           
           <div className="bg-white/80 rounded-lg p-4 flex flex-col items-center justify-center aspect-square hover:bg-white/90 transition-colors shadow-md">
-            <div className="w-12 h-12 flex items-center justify-center mb-3 text-funnel-green">
+            <div className="w-12 h-12 flex items-center justify-center mb-3 text-unify-blue">
               <Plus className="w-8 h-8" />
             </div>
             <span className="text-sm text-center font-medium text-gray-800">E muito mais</span>
@@ -70,7 +70,7 @@ const Connectors: React.FC<ConnectorsProps> = ({
         <div className="text-center">
           <a 
             href={buttonLink} 
-            className="inline-flex items-center text-white bg-funnel-red px-6 py-3 rounded-md font-medium hover:bg-funnel-red/90 transition-colors"
+            className="inline-flex items-center text-white bg-unify-pink px-6 py-3 rounded-md font-medium hover:bg-unify-pink/90 transition-colors"
           >
             {buttonText}
             <ArrowRight size={16} className="ml-2" />

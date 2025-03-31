@@ -63,11 +63,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                funnel: {
-                    green: '#004B41',
-                    red: '#FF5447',
-                    pink: '#FFB5E8',
-                    blue: '#38BEF8',
+                unify: {
+                    blue: '#4285f4',
+                    pink: '#ff326e',
                     gray: '#E4E9EB'
                 }
 			},

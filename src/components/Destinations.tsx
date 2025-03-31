@@ -32,7 +32,7 @@ const Destinations: React.FC<DestinationsProps> = ({
     )}>
       <div className="container-padding max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-funnel-green animate-fade-in">{title}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-unify-blue animate-fade-in">{title}</h2>
           <p className="text-lg max-w-3xl mx-auto animate-fade-in text-gray-700">
             {description}
           </p>
@@ -51,7 +51,7 @@ const Destinations: React.FC<DestinationsProps> = ({
                   className="w-12 h-12 object-contain mb-3"
                 />
               ) : (
-                <div className="w-12 h-12 flex items-center justify-center mb-3 text-funnel-green">
+                <div className="w-12 h-12 flex items-center justify-center mb-3 text-unify-blue">
                   <Plus className="w-8 h-8" />
                 </div>
               )}
@@ -60,7 +60,7 @@ const Destinations: React.FC<DestinationsProps> = ({
           ))}
           
           <div className="bg-white/80 rounded-lg p-6 shadow-sm flex flex-col items-center justify-center aspect-square hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 flex items-center justify-center mb-3 text-funnel-green">
+            <div className="w-12 h-12 flex items-center justify-center mb-3 text-unify-blue">
               <Plus className="w-8 h-8" />
             </div>
             <span className="text-sm text-center font-medium text-gray-800">E muito mais</span>
@@ -70,7 +70,7 @@ const Destinations: React.FC<DestinationsProps> = ({
         <div className="text-center">
           <a 
             href={buttonLink} 
-            className="inline-flex items-center text-white bg-funnel-green px-6 py-3 rounded-md font-medium hover:bg-funnel-green/90 transition-colors"
+            className="inline-flex items-center text-white bg-unify-blue px-6 py-3 rounded-md font-medium hover:bg-unify-blue/90 transition-colors"
           >
             {buttonText}
             <ArrowRight size={16} className="ml-2" />

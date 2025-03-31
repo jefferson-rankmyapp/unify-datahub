@@ -86,15 +86,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-funnel-green text-white hover:bg-funnel-green/90 transition-colors duration-300 py-3 px-6 rounded-md font-medium;
+    @apply bg-unify-blue text-white hover:bg-unify-blue/90 transition-colors duration-300 py-3 px-6 rounded-md font-medium;
   }
   
   .btn-secondary {
-    @apply bg-white text-funnel-green border border-funnel-green hover:bg-funnel-green/5 transition-colors duration-300 py-3 px-6 rounded-md font-medium;
+    @apply bg-white text-unify-blue border border-unify-blue hover:bg-unify-blue/5 transition-colors duration-300 py-3 px-6 rounded-md font-medium;
   }
 
   .btn-accent {
-    @apply bg-funnel-red text-white hover:bg-funnel-red/90 transition-colors duration-300 py-3 px-6 rounded-md font-medium;
+    @apply bg-unify-pink text-white hover:bg-unify-pink/90 transition-colors duration-300 py-3 px-6 rounded-md font-medium;
   }
 
   .section-padding {
