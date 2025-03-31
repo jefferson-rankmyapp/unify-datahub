@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({
   secondaryCta,
   image,
   imageAlt = "Hero image",
-  bgColor = "bg-funnel-green",
+  bgColor = "bg-unify-blue",
   className
 }) => {
   return (
@@ -52,6 +52,7 @@ const Hero: React.FC<HeroProps> = ({
                 variant="accent" 
                 size="lg"
                 href={primaryCta.href}
+                className="shadow-lg"
               >
                 {primaryCta.text}
               </Button>
@@ -61,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({
                   variant="secondary" 
                   size="lg"
                   href={secondaryCta.href}
-                  className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+                  className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
                 >
                   {secondaryCta.text}
                 </Button>

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Hero from '@/components/Hero';
 import Button from '@/components/Button';
@@ -22,7 +21,7 @@ const Index = () => {
     const interval = setInterval(() => {
       setScrollPosition(prev => {
         // Make the transition even smoother by using an even smaller increment
-        return (prev + 0.2) % 100;
+        return (prev + 0.05) % 100;
       });
     }, 50);
 
@@ -42,12 +41,12 @@ const Index = () => {
         bgColor="bg-unify-blue"
       />
 
-      {/* Dashboard Preview Section with animation and without side icons */}
+      {/* Dashboard Preview Section with improved visualization */}
       <section className="bg-unify-pink relative py-24">
         <div className="container-padding max-w-7xl mx-auto">
-          <div className="overflow-hidden rounded-lg shadow-2xl animate-pulse hover:animate-none transition-all duration-500 relative">
+          <div className="overflow-hidden rounded-lg shadow-2xl relative">
             <img 
-              src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/181cff161678559.63c7f4502061a.gif" 
+              src="https://assets-global.website-files.com/5fac161927bf86485ba43fd0/625af20b317b511651fc49ac_dash-1616-feature-library.png" 
               alt="Dashboard do Unify DataHub mostrando análises de marketing" 
               className="w-full h-auto object-cover"
             />
@@ -59,7 +58,7 @@ const Index = () => {
       {/* Interactive Features Section */}
       <InteractiveFeatures />
 
-      {/* Client Logos Section with smoother infinite scroll */}
+      {/* Client Logos Section with even smoother infinite scroll */}
       <section className="bg-unify-blue py-16 overflow-hidden">
         <div className="container-padding max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -70,7 +69,7 @@ const Index = () => {
           
           <div className="relative h-[400px]" style={{ overflow: 'hidden' }}>
             <div 
-              className="absolute w-full transition-transform duration-5000 ease-linear"
+              className="absolute w-full transition-transform duration-10000 ease-linear"
               style={{ transform: `translateY(-${scrollPosition}%)` }}
             >
               <img 

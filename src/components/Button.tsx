@@ -15,9 +15,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = "inline-flex items-center justify-center rounded-md font-medium transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2";
     
     const variants = {
-      primary: "bg-funnel-green text-white hover:bg-funnel-green/90 focus:ring-funnel-green",
-      secondary: "bg-white text-funnel-green border border-funnel-green hover:bg-funnel-green/5 focus:ring-funnel-green",
-      accent: "bg-funnel-red text-white hover:bg-funnel-red/90 focus:ring-funnel-red",
+      primary: "bg-unify-blue text-white hover:bg-unify-blue/90 focus:ring-unify-blue",
+      secondary: "bg-white text-unify-blue border border-unify-blue hover:bg-unify-blue/5 focus:ring-unify-blue",
+      accent: "bg-unify-pink text-white hover:bg-unify-pink/90 focus:ring-unify-pink",
     };
     
     const sizes = {
